@@ -1,0 +1,12 @@
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      # disable buildx
+      x-bake:
+        use: false
+    container_name: test-app
+    ports:
+      - "5000:5000"
+
