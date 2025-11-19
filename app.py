@@ -13,5 +13,6 @@ def home():
     app.logger.info("Home endpoint called")
     return "Homelab Test with logging"
 
-app.run(host="0.0.0.0", port=5000)
+port = int(os.environ.get("APP_PORT", 5000))
+app.run(host="0.0.0.0", port=port)
 

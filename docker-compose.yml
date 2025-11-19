@@ -8,5 +8,6 @@ services:
         use: false
     container_name: test-app
     ports:
-      - "5000:5000"
-
+      - "${HOST_PORT:-5000}:5000"
+    environment:
+      - APP_PORT=${APP_PORT:-5000}
